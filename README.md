@@ -1,23 +1,55 @@
-# AlleyCat Game
+# CatRunner Game
 
-Реализация игры на Unity 2D, с механиками игры "Alley Cat" (1984 год).
+ # Game Mechanics Overview
 
-[Игра на itch.io](https://gregtag.itch.io/alleygame)
+- When the game starts, the player sees:
+  - A character
+  - Platforms (some with hidden spikes)
+  - A fence
+  - Multiple windows
+  - Clouds
+  - Coins of various values
+  - A roaming enemy
 
-![Screenshot1](Screenshots/Screenshot1.png)
-![Screenshot2](Screenshots/Screenshot2.png)
+- **Controls:**
+  - Move the character using **W, A, S, D** or the **arrow keys**.
+  - The player can jump onto and off platforms and fences.
 
-## Описание
-* При запуске игры игрок наблюдает персонажа, платформы с шипами, забор, окна, облака, монетки, врага. 
-* Управление персонажем происходит при помощи W,A,S,D либо стрелочек.
-* Игрок может запрыгивать на платформы и забор и спрыгивать с них. 
-* Случайно на платформе появляются шипы и если на этой платформе находился игрок, то он падает вниз.
-* Случайно время от времени появляется враг, который по нижнему уровню слева направо или справо налево и может убить персонажа.
-* Если игрок умирает, то он возвращается на начало уровня и теряет одну жизнь.
-* Игрок должен запрыгнуть сначала на низкую платформу, затем на высокую, потом на забор. После этого он может запрыгнуть в окно и выиграть игру.
-* Когда игрок запрыгивает на забор, то случайно открывается одно из 12 окон. Из открытого окна могут лететь шипы по параболической траектории в сторону игрока, которые могут его убить.
-* Игрок может зацепиться за облака и перемещаться по ним. На каждом из трёх слоёв облаков находится по монетке разной стоимости.
-* Если игрок падает с облака, то он возвращается на начало уровня.
-* Монетки случайным образом могут перемещаться по облакам внутри одного слоя и также случайно могут кидать шипы в сторону игрока, которые летят по прямой.
-* Игрок может собирать монетки, набирая очки.
-* В верхнем левом углу экрана отображаются жизни игрока, а также количество набранных очков. Если жизни заканчиваются, то игрок проигрывает.
+- **Platforms:**
+  - Spikes randomly appear on platforms.
+  - If the player is standing on a platform when spikes appear, they fall down.
+
+- **Enemies:**
+  - An enemy randomly appears from time to time.
+  - It moves along the lower level from left to right or right to left.
+  - Contact with the enemy results in player death.
+
+- **Player Lives and Respawn:**
+  - If the player dies (by spikes or enemy), they return to the beginning of the level and lose one life.
+  - The game ends when all lives are lost.
+
+- **Level Progression:**
+  - The player must:
+    1. Jump onto a low platform
+    2. Then to a higher platform
+    3. Then onto the fence
+    4. Finally, jump into a window to win the game
+
+- **Window Hazards:**
+  - When the player jumps on the fence, one of 12 windows randomly opens.
+  - Spikes may shoot from the open window in a parabolic arc toward the player.
+
+- **Cloud Interaction:**
+  - The player can cling to clouds and move across them.
+  - There are three layers of clouds, each holding a coin of different value.
+  - Falling off a cloud sends the player back to the start.
+
+- **Coins and Hazards:**
+  - Coins can move randomly within their cloud layer.
+  - Some coins may shoot straight-flying spikes at the player.
+  - Collecting coins increases the player’s score.
+
+- **HUD (Heads-Up Display):**
+  - The top-left corner of the screen displays:
+    - Number of lives remaining
+    - Total points collected
